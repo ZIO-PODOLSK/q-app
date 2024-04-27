@@ -3,28 +3,10 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
-    ]
-  },
-  {
-    path: '/todoList',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/todoList.vue') }
-    ]
-  },
-  {
-    path: '/help',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/helpList.vue') }
-    ]
-  }, 
-  {
-    path: '/contacts',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/contactsList.vue') }
+      { path: '', component: () => import('pages/IndexPage.vue') },
+      { path: '/todoList', component: () => import('pages/todoList.vue') },
+      { path: '/help', component: () => import('pages/helpList.vue') },
+      { path: '/contacts', component: () => import('pages/contactsList.vue') }
     ]
   },
   {

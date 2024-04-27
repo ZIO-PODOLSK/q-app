@@ -1,3 +1,3 @@
 <template>
-  <div><h1>Здесь тудушка</h1></div>
+  <q-card class="clock_card q-ma-md q-pa-xs"> <h5>Страница тудушка</h5></q-card>
 </template>

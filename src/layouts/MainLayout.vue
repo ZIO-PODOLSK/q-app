@@ -91,9 +91,9 @@
       <q-card class="clock_card q-ma-md col text-center">
         <q-knob
           :min="0"
-          :max="23"
+          :max="59"
           :inner-min="1"
-          v-model="HH"
+          v-model="ss"
           show-value
           size="150px"
           :thickness="0.2"
@@ -115,9 +115,9 @@
           >
             <q-knob
               :min="0"
-              :max="59"
+              :max="23"
               :inner-min="1"
-              v-model="ss"
+              v-model="HH"
               show-value
               size="50px"
               :thickness="1"
@@ -129,8 +129,9 @@
           </q-knob>
         </q-knob>
       </q-card>
-
-      <router-view />
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </q-page-container>
   </q-layout>
 </template>
