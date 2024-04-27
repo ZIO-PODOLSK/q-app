@@ -46,89 +46,6 @@
     </q-drawer>
 
     <q-page-container>
-      <q-card class="clock_card q-ma-md">
-        <q-knob
-          :min="0"
-          :max="23"
-          :inner-min="1"
-          v-model="HH"
-          show-value
-          size="50px"
-          :thickness="0.3"
-          color="blue-10"
-          track-color="grey-3"
-          class="q-ma-md"
-        >
-        </q-knob>
-
-        <q-knob
-          :min="0"
-          :max="59"
-          :inner-min="1"
-          v-model="mm"
-          show-value
-          size="50px"
-          :thickness="0.3"
-          color="blue-10"
-          track-color="grey-3"
-          class="q-ma-md"
-        >
-        </q-knob>
-        <q-knob
-          :min="0"
-          :max="59"
-          v-model="ss"
-          show-value
-          size="50px"
-          :thickness="0.3"
-          color="blue-10"
-          track-color="grey-3"
-          class="q-ma-md"
-        >
-        </q-knob
-      ></q-card>
-
-      <q-card class="clock_card q-ma-md flex flex-center">
-        <q-knob
-          :min="0"
-          :max="59"
-          :inner-min="1"
-          v-model="ss"
-          show-value
-          size="150px"
-          :thickness="0.2"
-          color="green"
-          track-color="grey-3"
-          class="q-ma-md"
-        >
-          <q-knob
-            :min="0"
-            :max="59"
-            :inner-min="1"
-            v-model="mm"
-            show-value
-            size="100px"
-            :thickness="0.35"
-            color="yellow"
-            track-color="grey-3"
-            class="q-ma-md"
-          >
-            <q-knob
-              :min="0"
-              :max="23"
-              :inner-min="1"
-              v-model="HH"
-              show-value
-              size="50px"
-              :thickness="1"
-              color="red"
-              track-color="grey-3"
-              class="q-ma-md"
-            >
-            </q-knob>
-          </q-knob>
-        </q-knob>
-      </q-card>
       <keep-alive>
         <router-view />
       </keep-alive>
@@ -173,31 +90,33 @@ const linksList = [
     icon: "contacts",
     link: "/contacts",
   },
+    {
+    title: "happy",
+    caption: "Весёлая наркомания",
+    icon: "sos",
+    link: "/happyList",
+  },
 ];
 
 const mode = ref(true);
 const leftDrawerOpen = ref(true);
 
-const HH = ref(0);
-const mm = ref(0);
-const ss = ref(0);
-
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 
-// const justBtn = () => alert("Это просто кнопка");
-// const itsMouse = () => alert("Мышь!");
-
 const itsMouse = () => {
-  $q.dialog({
-    title: "Alert<em>!</em>",
-    message: "МЫШЬ!",
-  });
+  // $q.dialog({
+  //   title: "Alert<em>!</em>",
+  //   message: "МЫШЬ!",
+  // });
 };
 
 //вычисления
-let formattedString = ref("");
+const formattedString = ref("");
+const HH = ref(0);
+const mm = ref(0);
+const ss = ref(0);
 
 setInterval(() => {
   formattedString.value = date.formatDate(Date.now(), "DD MMMM YYYY HH:mm:ss");
@@ -205,20 +124,19 @@ setInterval(() => {
   mm.value = date.formatDate(Date.now(), "mm");
   ss.value = date.formatDate(Date.now(), "ss");
 }, 1000);
+
 </script>
 
 <style scoped>
-.clock_card {
-  max-width: 250px;
-}
-
 .fc {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.clock_card {
+  max-width: 250px;
+}
 .grad {
   background: red;
   background: -webkit-linear-gradient(
