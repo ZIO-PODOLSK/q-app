@@ -2,13 +2,14 @@
   <q-card class="clock_card q-ma-md q-pa-xs flex flex-center"
     ><h5>Страница тудушка</h5>
     <q-rating
-      class="q-pa-md"
       v-model="ratingModel"
       size="1.5em"
       :max="7"
-      color="brown-5"
-      icon="pets"
+      color="red-8"
+      icon="favorite"
+      class="q-pb-md"
     ></q-rating>
+
   </q-card>
 </template>
 
