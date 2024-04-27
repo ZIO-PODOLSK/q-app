@@ -6,7 +6,8 @@
       v-model="ratingModel"
       size="1.5em"
       :max="7"
-      color="primary"
+      color="brown-5"
+      icon="pets"
     ></q-rating>
   </q-card>
 </template>
