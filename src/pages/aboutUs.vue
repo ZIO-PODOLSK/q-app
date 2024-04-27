@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="hHh lpR fFf">
-    <q-header bordered class="bg-primary text-white" height-hint="98">
+  <q-layout>
+    <!-- <q-header bordered class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
@@ -15,31 +15,29 @@
         <q-route-tab to="/1T" label="1T Corporation" />
         <q-route-tab disabled to="/page3" label="Не входить" />
       </q-tabs>
-    </q-header>
+    </q-header> -->
 
-    <q-page-container>
-      <div class="wrapper_1t">
-        <div>
-          <h3>
-            Корпорация российских инновационных предприятий малого бизнеса
-          </h3>
+    <q-page-container class="flex flex-center row q-ma-md">
+        <div class="col">
           <h5>
+            Корпорация российских инновационных предприятий малого бизнеса
+          </h5>
+          <h6>
             Наши участники объединяют усилия на основе добровольной кооперации
             для того, чтобы создать прекрасный и безопасный цифровой мир, в
             котором люди и организации будут свободны для личной,
             профессиональной и общественной самореализации при помощи удобных и
             эффективных ИТ- инструментов
-          </h5>
+          </h6>
         </div>
-        <div>
+        <div class="col">
           <img
             src="https://1t.ru/wp-content/themes/one_t/assets/images/about-1-1000.jpg"
             alt="logo"
-            width="700px"
+            width="500"
           />
         </div>
         <router-view />
-      </div>
     </q-page-container>
   </q-layout>
 </template>
@@ -49,14 +47,3 @@ defineOptions({
   name: "1T",
 });
 </script>
-
-<style scoped>
-.wrapper_1t {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 10px;
-  margin-top: 50px;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh Lpr fff">
+  <q-layout view="hHh Lpr fff" class="bg-grey-3">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -30,7 +30,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" bordered breakpoint="500">
+    <q-drawer v-model="leftDrawerOpen" bordered breakpoint="500" class="bg-grey-4">
       <q-list>
         <q-item-label header> Главное меню </q-item-label>
 
@@ -67,32 +67,32 @@ const vali = ref();
 
 const linksList = [
   {
-    title: "todo",
+    title: "Тудушка",
     caption: "toDo лист",
     icon: "list",
     link: "/todoList",
   },
   {
-    title: "help",
-    caption: "Помощь",
+    title: "Помощь",
+    caption: "help",
     icon: "help_outline",
     link: "/Help",
   },
   {
-    title: "about us",
-    caption: "о нас",
+    title: "О нас",
+    caption: "about us",
     icon: "chat",
     link: "/AboutUs",
   },
   {
-    title: "contacts",
-    caption: "Контакты",
+    title: "Контакты",
+    caption: "contacts",
     icon: "contacts",
     link: "/contacts",
   },
     {
-    title: "happy",
-    caption: "Весёлая наркомания",
+    title: "Весёлая наркомания",
+    caption: "happy",
     icon: "sos",
     link: "/happyList",
   },

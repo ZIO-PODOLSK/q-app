@@ -1,6 +1,6 @@
 <template>
-  <q-layout>
-    <h4>Страничка весёлой наркомании</h4>
+  <q-layout class="bg-grey-3">
+    <h5 class="q-ma-md">Страничка весёлой наркомании</h5>
     <q-card class="clock_card q-ma-md">
       <q-knob
         :min="0"
