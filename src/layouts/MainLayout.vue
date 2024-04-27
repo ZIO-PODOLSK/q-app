@@ -88,7 +88,7 @@
         </q-knob
       ></q-card>
 
-      <q-card class="clock_card q-ma-md col text-center">
+      <q-card class="clock_card q-ma-md flex flex-center">
         <q-knob
           :min="0"
           :max="59"
