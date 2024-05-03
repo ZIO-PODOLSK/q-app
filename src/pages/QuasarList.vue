@@ -5,7 +5,7 @@
     >
     <q-card>
       <q-chip :class="{ square: selection }">Элемент chip</q-chip>
-      <q-checkbox v-model="selection" val="red" label="Скруглить" color="red" />
+      <q-checkbox v-model="selection" val="red" label="rounded" color="red" />
       <q-chip color="primary" text-color="white" icon="event">
         Add to calendar
       </q-chip>
