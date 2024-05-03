@@ -1,0 +1,3 @@
+<template>
+  <q-card class="clock_card q-ma-md q-pa-xs flex flex-center"> <h6>Справочник по компонентам Quasar</h6></q-card>
+</template>

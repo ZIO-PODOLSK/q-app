@@ -30,7 +30,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" bordered breakpoint="500" class="bg-grey-4">
+    <q-drawer v-model="leftDrawerOpen" bordered class="bg-grey-4">
       <q-list>
         <q-item-label header> Главное меню </q-item-label>
 
@@ -46,9 +46,9 @@
     </q-drawer>
 
     <q-page-container>
-      <keep-alive>
+      <!-- <keep-alive> -->
         <router-view />
-      </keep-alive>
+      <!-- </keep-alive> -->
     </q-page-container>
   </q-layout>
 </template>
@@ -95,6 +95,12 @@ const linksList = [
     caption: "happy",
     icon: "sos",
     link: "/happyList",
+  },
+      {
+    title: "Справочник по Quasar",
+    caption: "quasar",
+    icon: "book",
+    link: "/quasar",
   },
 ];
 

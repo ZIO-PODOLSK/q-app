@@ -1,6 +1,6 @@
 <template>
   <q-layout class="bg-grey-3">
-    <h5 class="q-ma-md">Страничка весёлой наркомании</h5>
+    <h5 class="q-ma-md">Часики</h5>
     <q-card class="clock_card q-ma-md">
       <q-knob
         :min="0"
@@ -96,15 +96,16 @@ import { Dialog } from "quasar";
 
 //вычисления
 // const formattedString = ref("");
-const HH = ref(0);
-const mm = ref(0);
-const ss = ref(0);
+const HH = ref("");
+const mm = ref("");
+const ss = ref("");
 
 setInterval(() => {
   // formattedString.value = date.formatDate(Date.now(), "DD MMMM YYYY HH:mm:ss");
   HH.value = date.formatDate(Date.now(), "HH");
   mm.value = date.formatDate(Date.now(), "mm");
   ss.value = date.formatDate(Date.now(), "ss");
+  // date.formatDate(Date.now(), "HH");
 }, 1000);
 </script>
 

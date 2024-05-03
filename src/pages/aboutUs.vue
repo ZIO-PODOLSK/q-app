@@ -35,6 +35,7 @@
             src="https://1t.ru/wp-content/themes/one_t/assets/images/about-1-1000.jpg"
             alt="logo"
             width="500"
+            dimmed
           />
         </div>
         <router-view />
