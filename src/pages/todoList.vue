@@ -1,5 +1,18 @@
 <template>
   <q-page class="column">
+    <div class="row q-pa-sm">
+      <q-input @keyup.enter="addTask" class="col" outlined v-model="mess" label="Добавить задачу">
+        <template v-slot:append>
+          <q-btn
+            v-on:click="addTask"
+            round
+            dense
+            flat
+            icon="add"
+          /> </template
+      ></q-input>
+    </div>
+
     <q-list separator bordered>
       <q-item
         v-for="(task, index) in tasks"
@@ -38,6 +51,17 @@
 
 <script setup>
 import { ref } from "vue";
+import { useQuasar } from "quasar";
+
+const addTask = () => {
+  tasks.value.push({
+    title: mess.value,
+    done: false
+  })
+  mess.value = "";
+};
+
+const mess = ref("");
 const tasks = ref([
   { title: "Задача 1", done: false },
   { title: "Задача 2", done: false },
@@ -45,8 +69,17 @@ const tasks = ref([
 ]);
 // const color = ref("red");
 
+const $q = useQuasar();
 const delTask = (ind) => {
-  tasks.value.splice(ind, 1);
+  $q.dialog({
+    title: "Confirm",
+    message: "Would you like to turn on the wifi?",
+    cancel: true,
+    persistent: true,
+  }).onOk(() => {
+    tasks.value.splice(ind, 1);
+    $q.notify(`Удалена строка {{ind+1}}`);
+  });
 };
 </script>
 
