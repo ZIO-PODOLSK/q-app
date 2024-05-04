@@ -15,12 +15,9 @@
           <p class="text-subtitle">{{ formattedString }}</p>
         </div>
 
-        <div class="col text-center">
-          <!-- <q-btn @click="justBtn">{{ formattedString }}</q-btn> -->
-        </div>
+        <div class="col text-center"></div>
 
         <q-toggle icon="light_mode" v-model="mode" color="blue" />
-        <!-- <q-avatar icon="light_mode"></q-avatar> -->
         <q-avatar class="q-pl-md q-pr-xl"
           ><q-img
             v-on:mousemove="itsMouse"
@@ -32,9 +29,6 @@
 
     <q-drawer v-model="leftDrawerOpen" class="bg-grey-4">
       <q-list>
-        <!-- <router-link to="/"><h6 class="q-pt-sm">На главную</h6></router-link> -->
-
-        <!-- <EssentialLink -->
         <router-link
           v-for="link in linksList"
           :key="link.title"
@@ -58,6 +52,7 @@ import { ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import { date } from "quasar";
 import { Dialog } from "quasar";
+import { useQuasar } from "quasar";
 
 defineOptions({
   name: "MainLayout",
@@ -66,15 +61,13 @@ defineOptions({
 const vali = ref();
 
 const linksList = [
-    {
+  {
     title: "На главную",
-    // caption: "toDo лист",
     icon: "login",
     link: "/",
   },
   {
     title: "Тудушка",
-    // caption: "toDo лист",
     icon: "list",
     link: "/todoList",
   },
@@ -88,7 +81,6 @@ const linksList = [
     title: "О нас",
     caption: "about us",
     icon: "img:src/img/logo.svg",
-    // icon: "supervisor_account", 
     link: "/AboutUs",
   },
   {
@@ -118,11 +110,9 @@ function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 
+const $q = useQuasar();
 const itsMouse = () => {
-  // $q.dialog({
-  //   title: "Alert<em>!</em>",
-  //   message: "МЫШЬ!",
-  // });
+  $q.notify("МЫШЬ!");
 };
 
 //вычисления
