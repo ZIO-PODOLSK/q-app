@@ -46,6 +46,7 @@
         </q-item-section>
       </q-item>
     </q-list>
+    <div class="no-task absolute-center" v-if="!tasks.length"><div><q-icon class="q-pa-xl" name="auto_stories"/>задач нет</div></div>
   </q-page>
 </template>
 
@@ -63,9 +64,9 @@ const addTask = () => {
 
 const mess = ref("");
 const tasks = ref([
-  { title: "Задача 1", done: false },
-  { title: "Задача 2", done: false },
-  { title: "Задача 3", done: false },
+  // { title: "Задача 1", done: false },
+  // { title: "Задача 2", done: false },
+  // { title: "Задача 3", done: false },
 ]);
 // const color = ref("red");
 
@@ -95,5 +96,10 @@ const delTask = (ind) => {
   width: 42px;
   align-self: flex-end;
   color: red;
+}
+.no-task{
+  color: grey;
+  opacity: 0.3;
+  font-size: 5rem;
 }
 </style>
