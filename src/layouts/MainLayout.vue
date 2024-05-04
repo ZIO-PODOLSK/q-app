@@ -30,24 +30,24 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" bordered class="bg-grey-4">
+    <q-drawer v-model="leftDrawerOpen" class="bg-grey-4">
       <q-list>
-        <q-item-label header> Главное меню </q-item-label>
+        <!-- <router-link to="/"><h6 class="q-pt-sm">На главную</h6></router-link> -->
 
         <!-- <EssentialLink -->
         <router-link
           v-for="link in linksList"
           :key="link.title"
-          v-bind="link"
           :to="link.link"
-          ><EssentialLink v-bind="link"
-        /></router-link>
+        >
+          <EssentialLink v-bind="link" />
+        </router-link>
       </q-list>
     </q-drawer>
 
     <q-page-container>
       <!-- <keep-alive> -->
-        <router-view />
+      <router-view />
       <!-- </keep-alive> -->
     </q-page-container>
   </q-layout>
@@ -66,9 +66,15 @@ defineOptions({
 const vali = ref();
 
 const linksList = [
+    {
+    title: "На главную",
+    // caption: "toDo лист",
+    icon: "login",
+    link: "/",
+  },
   {
     title: "Тудушка",
-    caption: "toDo лист",
+    // caption: "toDo лист",
     icon: "list",
     link: "/todoList",
   },
@@ -81,22 +87,23 @@ const linksList = [
   {
     title: "О нас",
     caption: "about us",
-    icon: "chat",
+    icon: "img:src/img/logo.svg",
+    // icon: "supervisor_account", 
     link: "/AboutUs",
   },
   {
     title: "Контакты",
     caption: "contacts",
-    icon: "contacts",
+    icon: "groups",
     link: "/contacts",
   },
-    {
+  {
     title: "Весёлая наркомания",
     caption: "happy",
     icon: "sos",
     link: "/happyList",
   },
-      {
+  {
     title: "Справочник по Quasar",
     caption: "quasar",
     icon: "book",
@@ -130,7 +137,6 @@ setInterval(() => {
   mm.value = date.formatDate(Date.now(), "mm");
   ss.value = date.formatDate(Date.now(), "ss");
 }, 1000);
-
 </script>
 
 <style scoped>
