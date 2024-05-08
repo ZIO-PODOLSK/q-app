@@ -15,7 +15,7 @@
 
     <div class="row">
       <div class="col-12 col-md absolute-center">.col-12 .col-md</div>
-      <div class="col-12 col-md">.col-12 .col-md</div>
+      <div class="col-12 col-md" bordered>.col-12 .col-md</div>
       <div class="col-12 col-md">.col-12 .col-md</div>
     </div>
   </div>
